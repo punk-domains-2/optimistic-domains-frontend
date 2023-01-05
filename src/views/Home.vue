@@ -37,7 +37,7 @@
 
     <div class="text-align-header">
       <p class="mt-5 price-text">
-          Domain price: {{getPrice.toFixed(3)}} {{getPaymentTokenName}}
+          Domain price: {{Number(getPrice).toFixed(2)}} {{getPaymentTokenName}}
       </p>
     </div>
 
@@ -94,23 +94,23 @@
           <tbody>
             <tr>
               <td>1 character</td>
-              <td>{{getMinterTldPrice1.toFixed(3)}} {{getPaymentTokenName}}</td>
+              <td>{{Number(getMinterTldPrice1).toFixed(2)}} {{getPaymentTokenName}}</td>
             </tr>
             <tr>
               <td>2 characters</td>
-              <td>{{getMinterTldPrice2.toFixed(3)}} {{getPaymentTokenName}}</td>
+              <td>{{Number(getMinterTldPrice2).toFixed(2)}} {{getPaymentTokenName}}</td>
             </tr>
             <tr>
               <td>3 characters</td>
-              <td>{{getMinterTldPrice3.toFixed(3)}} {{getPaymentTokenName}}</td>
+              <td>{{Number(getMinterTldPrice3).toFixed(2)}} {{getPaymentTokenName}}</td>
             </tr>
             <tr>
               <td>4 characters</td>
-              <td>{{getMinterTldPrice4.toFixed(3)}} {{getPaymentTokenName}}</td>
+              <td>{{Number(getMinterTldPrice4).toFixed(2)}} {{getPaymentTokenName}}</td>
             </tr>
             <tr>
               <td>5+ characters</td>
-              <td>{{getMinterTldPrice5.toFixed(3)}} {{getPaymentTokenName}}</td>
+              <td>{{Number(getMinterTldPrice5).toFixed(2)}} {{getPaymentTokenName}}</td>
             </tr>
           </tbody>
         </table>
@@ -119,7 +119,9 @@
     
   </div>
 
+  <!--
   <Referral v-if="isActivated" />
+  -->
 
 </template>
 
@@ -229,7 +231,6 @@ export default {
         const tx = await minterContractSigner.mint(
           this.domainLowerCase,
           this.address,
-          referral,
           {
             value: ethers.utils.parseEther(String(this.getPrice))
           }

@@ -15,15 +15,15 @@ export default {
     tldContract: null,
     tldChainId: 10,
     tldChainName: "Optimism",
-    minterAddress: "0x7Df67B2ef4eEDf49Fc53Bb6E94e90e9546FC6c6B", // TODO
+    minterAddress: "0xC17E9347Ce26D7630A98eC4158Bd7200E54bf4Cd", // TODO
     minterContract: null,
     minterPaused: true,
-    minterTldPrice1: 0.999,
-    minterTldPrice2: 0.420,
-    minterTldPrice3: 0.069,
-    minterTldPrice4: 0.019,
-    minterTldPrice5: 0.009,
-    referralFee: 1000
+    minterTldPrice1: 4.20,
+    minterTldPrice2: 0.69,
+    minterTldPrice3: 0.10,
+    minterTldPrice4: 0.02,
+    minterTldPrice5: 0.01,
+    referralFee: 0
   }),
 
   getters: { 
@@ -146,10 +146,6 @@ export default {
       const priceWei5 = await minterContract.price5char();
       const domainPrice5 = ethers.utils.formatEther(priceWei5);
       commit("setMinterTldPrice5", domainPrice5);
-
-      // fetch referral fee
-      const refFee = await minterContract.referralFee();
-      commit("setReferralFee", refFee);
     }
   }
 };
