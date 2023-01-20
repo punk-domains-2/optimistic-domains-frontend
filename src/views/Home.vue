@@ -43,7 +43,7 @@
 
     <!-- Minter contract paused -->
     <button v-if="isActivated && getMinterPaused" class="btn btn-primary btn-lg mt-3 buy-button" :disabled="true">
-      <span v-if="getMinterPaused">Buying paused</span>
+      <span v-if="getMinterPaused">Loading...</span>
     </button>
 
     <!-- Not eligible -->
