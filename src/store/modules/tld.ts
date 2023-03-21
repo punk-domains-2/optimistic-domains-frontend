@@ -17,6 +17,7 @@ export default {
     tldChainName: "Optimism",
     minterAddress: "0xC17E9347Ce26D7630A98eC4158Bd7200E54bf4Cd", // TODO
     minterContract: null,
+    minterLoadingData: false,
     minterPaused: true,
     minterTldPrice1: 4.20,
     minterTldPrice2: 0.69,
@@ -51,6 +52,9 @@ export default {
     getMinterContract(state) {
       return state.minterContract;
     },
+    getMinterLoadingData(state) {
+      return state.minterLoadingData;
+    },
     getMinterPaused(state) {
       return state.minterPaused;
     },
@@ -75,6 +79,10 @@ export default {
   },
 
   mutations: {
+    setDiscountPercentage(state, percentage) {
+      state.discountPercentage = percentage;
+    },
+
     setTldContract(state) {
       let fProvider = getFallbackProvider(state.tldChainId);
 
@@ -86,8 +94,8 @@ export default {
       state.minterContract = contract;
     },
 
-    setDiscountPercentage(state, percentage) {
-      state.discountPercentage = percentage;
+    setMinterLoadingData(state, loading) {
+      state.minterLoadingData = loading;
     },
 
     setMinterPaused(state, paused) {
@@ -116,6 +124,8 @@ export default {
 
   actions: {
     async fetchMinterContractData({commit, state}) {
+      commit("setMinterLoadingData", true);
+
       let fProvider = getFallbackProvider(state.tldChainId);
 
       // minter contract
@@ -146,6 +156,8 @@ export default {
       const priceWei5 = await minterContract.price5char();
       const domainPrice5 = ethers.utils.formatEther(priceWei5);
       commit("setMinterTldPrice5", domainPrice5);
+
+      commit("setMinterLoadingData", false);
     }
   }
 };
