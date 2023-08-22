@@ -15,7 +15,7 @@ export default {
     tldContract: null,
     tldChainId: 10,
     tldChainName: "Optimism",
-    minterAddress: "0xC17E9347Ce26D7630A98eC4158Bd7200E54bf4Cd", // TODO
+    minterAddress: "0x1c7cCF4057C04Fd4feA4b1a8b0484770569BBbe4", // TODO
     minterContract: null,
     minterLoadingData: false,
     minterPaused: true,

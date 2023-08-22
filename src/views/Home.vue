@@ -5,11 +5,8 @@
     <div class="text-align-header mt-4 mb-2">
       <h1>Mint your <span class="home-punchline-domain">{{getTldName}}</span> web3 username!</h1>
       <p>
-        All proceeds go to 
-        <a href="https://blog.punk.domains/posts/retro-pgf/" target="_blank">
-          retroactive public goods funding on Optimism (RetroPGF).
-        </a>
-        </p>
+        And get a permissionless web3 username that no one can take away from you.
+      </p>
     </div>
 
     <div class="d-flex justify-content-center domain-input-container mb-3 mt-5">
