@@ -34,7 +34,7 @@
 
     <div class="text-align-header">
       <p class="mt-5 price-text">
-          Domain price: {{Number(getPrice).toFixed(2)}} {{getPaymentTokenName}}
+          Domain price: {{Number(getPrice).toFixed(3)}} {{getPaymentTokenName}}
       </p>
     </div>
 
@@ -113,7 +113,7 @@
             </tr>
             <tr>
               <td>5+ characters</td>
-              <td>{{Number(getMinterTldPrice5).toFixed(2)}} {{getPaymentTokenName}}</td>
+              <td>{{Number(getMinterTldPrice5).toFixed(3)}} {{getPaymentTokenName}}</td>
             </tr>
           </tbody>
         </table>
