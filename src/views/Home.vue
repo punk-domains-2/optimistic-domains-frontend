@@ -109,11 +109,11 @@
             </tr>
             <tr>
               <td>4 characters</td>
-              <td>{{Number(getMinterTldPrice4).toFixed(2)}} {{getPaymentTokenName}}</td>
+              <td>{{Number(getMinterTldPrice4).toFixed(3)}} {{getPaymentTokenName}}</td>
             </tr>
             <tr>
               <td>5+ characters</td>
-              <td>{{Number(getMinterTldPrice5).toFixed(3)}} {{getPaymentTokenName}}</td>
+              <td>{{Number(getMinterTldPrice5).toFixed(4)}} {{getPaymentTokenName}}</td>
             </tr>
           </tbody>
         </table>
