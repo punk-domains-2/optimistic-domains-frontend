@@ -397,7 +397,7 @@
       e = 10; // TODO: change chain ID
 			let r;
 			const n = s[e];
-			return n && (r = `https://rpc.ankr.com/optimism`), r // TODO
+			return n && (r = `https://mainnet.optimism.io`), r // TODO
 		}
 
 		function z(e, t) {

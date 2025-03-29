@@ -55,8 +55,7 @@ export default function useChainHelpers() {
       } else if (networkId === 10) {
         // Optimism
         urls = [
-          "https://optimism-mainnet.public.blastapi.io",
-          "https://rpc.ankr.com/optimism"
+          "https://mainnet.optimism.io"
         ]; 
       } else if (networkId === 56) {
         // BSC mainnet
@@ -160,7 +159,7 @@ export default function useChainHelpers() {
         chainId: "0xA",
         chainName: "Optimism",
         nativeCurrency: { decimals: 18, name: "ETH", symbol: "ETH" }, 
-        rpcUrls: ["https://rpc.ankr.com/optimism"]
+        rpcUrls: ["https://mainnet.optimism.io"]
       }] 
     } else if (networkName == "Optimism Testnet") {
       method = "wallet_addEthereumChain"
